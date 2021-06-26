@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Raven.Client.Documents.Session;
 using Shop.Models;
 using Shop.Raven;
 
@@ -13,7 +14,8 @@ namespace Shop
             Console.Clear();
 
             //GetProduct(id: "products/67-A");
-            GetAllProducts();
+            //GetAllProducts();
+            GetProducts(1, 3);
         }
 
         //List products - (Creater)
@@ -51,6 +53,29 @@ namespace Shop
                 List<Product> all = session.Query<Product>().ToList();
 
                 foreach (Product products in all)
+                {
+                    System.Console.WriteLine($"Product: {products.Name} \t\t price: {products.Price} \t\t Type: {products.Type}");
+                }
+            }
+        }
+
+        //Just some item from the list
+        static void GetProducts(int pageNdx, int pageSize)
+        {
+            int skip = (pageNdx - 1) * pageSize;
+            int take = pageSize;
+
+            using (var session = DocumentStoreHolder.Store.OpenSession())
+            {
+                List<Product> page = session.Query<Product>()
+                    .Statistics(out QueryStatistics stats) //Queryable product
+                    .Skip(skip)
+                    .Take(take)
+                    .ToList();
+
+                System.Console.WriteLine($"Showing results {skip + 1} to {skip + pageSize} of {stats.TotalResults}");
+
+                foreach (Product products in page)
                 {
                     System.Console.WriteLine($"Product: {products.Name} \t\t price: {products.Price} \t\t Type: {products.Type}");
                 }
