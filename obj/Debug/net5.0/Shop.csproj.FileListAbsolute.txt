@@ -1,0 +1,16 @@
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\bin\Debug\net5.0\Shop.exe
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\bin\Debug\net5.0\Shop.deps.json
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\bin\Debug\net5.0\Shop.runtimeconfig.json
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\bin\Debug\net5.0\Shop.runtimeconfig.dev.json
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\bin\Debug\net5.0\Shop.dll
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\bin\Debug\net5.0\ref\Shop.dll
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\bin\Debug\net5.0\Shop.pdb
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\obj\Debug\net5.0\Shop.csproj.AssemblyReference.cache
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\obj\Debug\net5.0\Shop.GeneratedMSBuildEditorConfig.editorconfig
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\obj\Debug\net5.0\Shop.AssemblyInfoInputs.cache
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\obj\Debug\net5.0\Shop.AssemblyInfo.cs
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\obj\Debug\net5.0\Shop.csproj.CoreCompileInputs.cache
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\obj\Debug\net5.0\Shop.dll
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\obj\Debug\net5.0\ref\Shop.dll
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\obj\Debug\net5.0\Shop.pdb
+E:\source\repos\Code Snippets\CSharp-Raven\Shop\obj\Debug\net5.0\Shop.genruntimeconfig.cache
