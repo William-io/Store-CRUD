@@ -8,13 +8,9 @@ namespace Shop
     {
         static void Main(string[] args)
         {
-            // Console.WriteLine("");
-            // CreateProduct(name: "Dell", type: "Accessory", price: 9.10);
-            // CreateProduct(name: "Mouse Logtech", type: "Accessory", price: 2.10);
+            Console.Clear();
 
-            CreateProduct(name: "Mouse Dell", type: "Accessory", price: 30.10);
-            CreateProduct(name: "Mouse-Pad Logtech", type: "Accessory", price: 40.10);
-            CreateProduct(name: "Monitor", type: "Accessory", price: 90.10);
+            GetProduct(id: "products/67-A");
         }
 
         //List products
@@ -32,6 +28,16 @@ namespace Shop
                 //Access 
                 session.Store(products);
                 session.SaveChanges();
+            }
+        }
+
+        //Metodo para obter produto e exibir no terminal
+        static void GetProduct(string id)
+        {
+            using (var session = DocumentStoreHolder.Store.OpenSession())
+            {
+                Product products = session.Load<Product>(id);
+                System.Console.WriteLine($"Product: {products.Name} \t\t price: {products.Price}");
             }
         }
     }
