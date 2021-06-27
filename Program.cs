@@ -82,5 +82,18 @@ namespace Shop
 
             }
         }
+
+        static void CreateCart(string customer)
+        {
+            //Email indentify
+            Cart cart = new Cart();
+            cart.Customer = customer;
+
+            using (var session = DocumentStoreHolder.Store.OpenSession())
+            {
+                session.Store(cart);
+                session.SaveChanges();
+            }
+        }
     }
 }
