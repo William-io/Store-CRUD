@@ -5,6 +5,7 @@ using Raven.Client.Documents.Session;
 using Shop.Models;
 using Shop.Raven;
 
+
 namespace Shop
 {
     class Program
@@ -15,7 +16,10 @@ namespace Shop
 
             //GetProduct(id: "products/67-A");
             //GetAllProducts();
-            GetProducts(1, 3);
+            //CreateProduct("Coffee", 8.99)
+            //CreateCart(customer: "capuletos@live.com");
+            // GetProducts(1, 3);
+            AddProductToCart(customer: "capuletos@live.com", productsId: "products/67-A", quantity: 5, type: "Accessory");
         }
 
         //List products - (Creater)
@@ -92,6 +96,26 @@ namespace Shop
             using (var session = DocumentStoreHolder.Store.OpenSession())
             {
                 session.Store(cart);
+                session.SaveChanges();
+            }
+        }
+
+        static void AddProductToCart(string customer, string productsId, int quantity, string type)
+        {
+            using (var session = DocumentStoreHolder.Store.OpenSession())
+            {
+                Cart cart = session.Query<Cart>().Single(x:Cart => x.Customer == customer);
+                Product p = session.Load<Product>(productsId);
+
+                cart.Lines.Add(item: new CartLine
+                {
+                    ProductName = p.Name,
+                    ProductPrice = p.Price,
+                    ProductType = p.Type,
+                    Quantity = quantity
+                });
+
+                // session.Store(cart);
                 session.SaveChanges();
             }
         }
